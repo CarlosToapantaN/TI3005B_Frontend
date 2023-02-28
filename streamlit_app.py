@@ -7,12 +7,14 @@ import pymongo
 # Connect to the MongoDB database
 client = pymongo.MongoClient("mongodb+srv://equipo3:password3@cluster0.gkaurda.mongodb.net/?retryWrites=true&w=majority")
 
-# Select the database and collection you want to work with
 db = client["test1"]
+
 studentProject = db["collection1"]
 projects = db["collection2"]
-
 cursor = projects.find()
+
+db2 = client["DireccionSS"]
+students = db2["students"]
 
 projects = []
 for document in cursor:
@@ -35,7 +37,16 @@ name, authentication_status, username = authenticator.login('Login', 'main')
 if authentication_status:
     authenticator.logout('Logout', 'main')
     st.write(f'Bienvenido *{name}*')
-    title = st.text_input('Matrícula')
+    studentID = st.text_input('Matrícula')
+    if studentID:
+        document = students.find_one({"studentID": studentID})
+        if document:
+            name = document["name"]
+            major = document["major"]
+            st.text_input("Name", name)
+            st.text_input("Major", major)
+        else:
+            st.error("No se ha encontrado el estudiante")
     option = st.selectbox(
     'Elige el proyecto', projects)
     if st.button('Enviar'):
