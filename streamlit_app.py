@@ -9,9 +9,10 @@ client = pymongo.MongoClient("mongodb+srv://equipo3:password3@cluster0.gkaurda.m
 
 # Select the database and collection you want to work with
 db = client["test1"]
-collection = db["collection2"]
+studentProject = db["collection1"]
+projects = db["collection2"]
 
-cursor = collection.find()
+cursor = projects.find()
 
 projects = []
 for document in cursor:
@@ -39,6 +40,12 @@ if authentication_status:
     'Elige el proyecto', projects)
     if st.button('Enviar'):
         st.write('Enviado')
+        document = {
+        "studentID": title,
+        "projectID": option
+        }
+        studentProject.insert_one(document)
+
 elif authentication_status == False:
     st.error('Username/password is incorrect')
 elif authentication_status == None:
