@@ -52,7 +52,7 @@ if authentication_status:
     if st.button('Enviar'):
         st.write('Enviado')
         document = {
-        "studentID": title,
+        "studentID": studentID,
         "projectID": option
         }
         studentProject.insert_one(document)
