@@ -1,8 +1,8 @@
 credentials:
   usernames:
-    jsmith:
-      email: jsmith@gmail.com
-      name: John Smith
+    socioformador1:
+      email: socioformador@gmail.com
+      name: Socio Formador
       password: $2b$12$vfM5NSFxLTUEm.ElBBQDiuk2hNuMmYEt5waCrf95SeG9YT..uQFni # To be replaced with hashed password
     rbriggs:
       email: rbriggs@gmail.com
