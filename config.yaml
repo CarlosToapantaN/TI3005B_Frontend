@@ -1,12 +1,12 @@
 credentials:
   usernames:
     socioformador1:
-      email: socioformador@gmail.com
-      name: Socio Formador
+      email: socioformador1@gmail.com
+      name: Socio Formador 1
       password: $2b$12$vfM5NSFxLTUEm.ElBBQDiuk2hNuMmYEt5waCrf95SeG9YT..uQFni # To be replaced with hashed password
-    rbriggs:
-      email: rbriggs@gmail.com
-      name: Rebecca Briggs
+    socioformador2:
+      email: socioformador2@gmail.com
+      name: Socio Formador 2
       password: $2b$12$adcvCQv77NIZPqyRRKO9VeiKLlJtzpuVDmMnOhnR1TbxuHJ2CjenO # To be replaced with hashed password
 cookie:
   expiry_days: 0
